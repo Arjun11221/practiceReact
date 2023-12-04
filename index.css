@@ -151,3 +151,10 @@
 .menu{
     text-decoration: none;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid rebeccapurple;
+    width: 250px;
+    height: auto;
+}
