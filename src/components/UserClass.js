@@ -1,38 +1,37 @@
 import React from "react";
 
-class UserClass extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            count : 1,
-            count2 : 2,
-        }
-        console.log("Child Constructor");
-    }
+class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: {
+        name: "Dummy",
+        location: "Default",
+      },
+    };
+  }
 
-    componentDidMount(){
-        console.log("Child Did Mount");
-    }
-    
-    render(){
-        console.log("Child Render");
-        const {name , location} = this.props;
-        const {count , count2} = this.state;
-        return(
-            <div className="user-card">
-                <h1>Count : {count}</h1>       
-                <h1>Count2 : {count2}</h1>
-                <button onClick={()=>{
-                    this.setState({
-                        count : this.state.count + 2,
-                        count2 : this.state.count2 + 2
-                    })
-                }} >Inc</button>
-                <h2>Name : {name}</h2>
-                <h2>Location : {location}</h2>
-            </div>
-        )
-    }
+  async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/Arjun11221");
+        const json = await data.json();
+        console.log(json);
+        this.setState({
+            userInfo:json
+        })
+  }
+
+  render() {
+    const {name,location,avatar_url,bio,html_url} = this.state.userInfo;
+    return (
+      <div className="user-card">
+        <img src={avatar_url}/>
+        <h2>Name : {name}</h2>
+        <h2>Location : {location}</h2>
+        <h3>Bio : {bio}</h3>
+        <a href={html_url} target="_blank" >Know Me</a>
+      </div>
+    );
+  }
 }
 
 export default UserClass;
