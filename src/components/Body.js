@@ -2,11 +2,14 @@ import RestaurentCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+// import useListOfRes from "../utils/useListOfRes";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
   const [search, setSearch] = useState("");
   const [filterRes, setFilterRes] = useState([]);
+  // const listOfRes = useListOfRes();
 
   useEffect(() => {
     fetchData();
@@ -17,7 +20,7 @@ const Body = () => {
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log(json);
+    
     setListOfRes(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -25,8 +28,13 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  if(listOfRes.length===0) return <Shimmer/>;
 
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false){
+    return <h1>You are offline Check Your Internet Connection...</h1>
+  }
+  
+  if(listOfRes.length===0) return <Shimmer/>;
   return(
     <div className="body">
       <div className="search-box">
