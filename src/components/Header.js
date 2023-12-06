@@ -7,22 +7,22 @@ const Header = ()=>{
   const [btnName , setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
     return(
-      <div className="header">
-        <div className="logo-container">
-          <img className="logo" src={LOGO_URL}/>
+      <div className="flex bg-purple-500 h-36 justify-between shadow-2xl ">
+        <div className="logo-container flex ">
+          <img className="w-25 h-28 m-4 rounded-xl ml-10 " src={LOGO_URL}/>
         </div>
-        <div className="nav-items">
+        <div className="nav-items flex">
 
-          <ul>
-            <li>Status : {onlineStatus ? "✅" : "💀" }</li>
-            <li>
+          <ul className="flex items-center " >
+            <li className="px-4 font-semibold text-xl " >Status : {onlineStatus ? "✅" : "💀" }</li>
+            <li className="px-4 font-semibold text-xl " >
               <Link to={"/"}>Home</Link>
             </li>
-            <li><Link to={"/about"}>About</Link> </li>
-            <li><Link to={"/contact"}>Contact</Link></li> 
-            <li><Link to={"/grocery"}>Grocery</Link></li>
-            <li>Cart</li>
-            <button className="login" onClick={()=>{
+            <li className="px-4 font-semibold text-xl " ><Link to={"/about"}>About</Link> </li>
+            <li className="px-4 font-semibold  text-xl" ><Link to={"/contact"}>Contact</Link></li> 
+            <li className="px-4 font-semibold text-xl" ><Link to={"/grocery"}>Grocery</Link></li>
+            <li className="px-4 font-semibold text-xl" >Cart</li>
+            <button className="login px-4 font-semibold text-xl" onClick={()=>{
               btnName==="Login" ? setBtnName("Logout") : setBtnName("Login"); 
             }}>{btnName}</button>
           </ul>
