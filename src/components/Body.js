@@ -9,7 +9,8 @@ const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
   const [search, setSearch] = useState("");
   const [filterRes, setFilterRes] = useState([]);
-  // const listOfRes = useListOfRes();
+
+  // const promotedLabelRestaurant = withPromotedLabel(RestaurentCard);
 
   useEffect(() => {
     fetchData();
@@ -20,7 +21,7 @@ const Body = () => {
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    
+
     setListOfRes(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -30,12 +31,12 @@ const Body = () => {
   };
 
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus===false){
-    return <h1>You are offline Check Your Internet Connection...</h1>
+  if (onlineStatus === false) {
+    return <h1>You are offline Check Your Internet Connection...</h1>;
   }
-  
-  if(listOfRes.length===0) return <Shimmer/>;
-  return(
+
+  if (listOfRes.length === 0) return <Shimmer />;
+  return (
     <div className="body">
       <div className=" flex p-4 m-4 items-center justify-center gap-4 text-black font-medium">
         <input
@@ -49,7 +50,7 @@ const Body = () => {
         <button
           className=" px-4 py-2 bg-purple-400 rounded-lg   "
           onClick={() => {
-            const searchList = listOfRes.filter((res) => 
+            const searchList = listOfRes.filter((res) =>
               res.info.name.toLowerCase().includes(search.toLowerCase())
             );
             setFilterRes(searchList);
@@ -73,7 +74,12 @@ const Body = () => {
       </div>
       <div className="flex flex-wrap ">
         {filterRes.map((restaurent) => (
-          <Link to={"/restaurant/"+restaurent.info.id} key={restaurent.info.id} ><RestaurentCard resData={restaurent} /></Link>
+          <Link
+            to={"/restaurant/" + restaurent.info.id}
+            key={restaurent.info.id}
+          >
+            <RestaurentCard resData={restaurent} />
+          </Link>
         ))}
       </div>
     </div>
