@@ -19,7 +19,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
 
@@ -76,7 +76,7 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
-        <div className="  justify-start ">
+        <div className="justify-start">
           <label>Name </label>
           <input
             className="p-2 border border-black outline-none rounded-md"
