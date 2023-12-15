@@ -1,9 +1,10 @@
 import RestaurentCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 // import useListOfRes from "../utils/useListOfRes";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -35,13 +36,15 @@ const Body = () => {
     return <h1>You are offline Check Your Internet Connection...</h1>;
   }
 
+  const { setName, logedIn } = useContext(UserContext);
+
   if (listOfRes.length === 0) return <Shimmer />;
   return (
     <div className="body">
       <div className=" flex p-4 m-4 items-center justify-center gap-4 text-black font-medium">
         <input
           type="text"
-          className="border border-black rounded-md outline-none w-96 h-8 "
+          className="border border-black rounded-md outline-none w-96 h-10 p-2 "
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
@@ -59,18 +62,28 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="justify-start mx-4 ">
-        <button
-          className="px-4 py-2 bg-zinc-800 rounded-lg text-white "
-          onClick={() => {
-            const filterList = listOfRes.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setFilterRes(filterList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+      <div className="flex">
+        <div className=" justify-start mx-4 ">
+          <button
+            className="px-4 py-3 bg-zinc-800 rounded-lg text-white "
+            onClick={() => {
+              const filterList = listOfRes.filter(
+                (res) => res.info.avgRating > 4
+              );
+              setFilterRes(filterList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
+        <div className="  justify-start ">
+          <label>Name </label>
+          <input
+            className="p-2 border border-black outline-none rounded-md"
+            value={logedIn}
+            onChange={(e)=>setName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap ">
         {filterRes.map((restaurent) => (
