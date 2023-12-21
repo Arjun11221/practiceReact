@@ -3,35 +3,35 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-//import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-// import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Grocery = lazy(() => import("./components/Grocery"));
-
 const About = lazy(() => import("./components/About"));
 
+const AppLayout = () => {
+  const [name, setName] = useState();
 
-const AppLayout = () => { 
-  const [name , setName] = useState();
-
-  useEffect(()=>{
+  useEffect(() => {
     const data = {
-      name : "Arjun"
-    }
+      name: "Arjun",
+    };
     setName(data.name);
-  },[]);
+  }, []);
 
   return (
-    <UserContext.Provider value={{logedIn : name , setName}}>
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
-    </UserContext.Provider>
+    <Provider store={appStore} >
+      <UserContext.Provider value={{ logedIn: name, setName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

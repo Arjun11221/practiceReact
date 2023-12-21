@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  // console.log(categories);
+  console.log(categories);
 
   return (
     <div className="text-center">
@@ -33,7 +33,7 @@ const RestaurantMenu = () => {
 
       {categories.map((category,index) => (
         <RestaurantCategory
-          key={category?.card?.card?.id}
+          key={category?.card?.card?.title}
           data={category?.card?.card}
           showItems = {index===showIndex ? true : false }
           setShowIndex = {()=>setShowIndex(index)}
