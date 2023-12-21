@@ -3,6 +3,7 @@ import { IMG_URL } from "../utils/constant";
 import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
+  
   const dispatch = useDispatch();
   const handleAddClick = (item)=>{
     dispatch(addItem(item));
