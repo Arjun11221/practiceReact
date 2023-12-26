@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1703525468672" clover="3.2.0">
-  <project timestamp="1703525468672" name="All files">
-    <metrics statements="27" coveredstatements="22" conditionals="4" coveredconditionals="2" methods="11" coveredmethods="6" elements="42" coveredelements="30" complexity="0" loc="27" ncloc="27" packages="2" files="7" classes="7"/>
+<coverage generated="1703588235555" clover="3.2.0">
+  <project timestamp="1703588235555" name="All files">
+    <metrics statements="59" coveredstatements="52" conditionals="8" coveredconditionals="5" methods="23" coveredmethods="17" elements="90" coveredelements="74" complexity="0" loc="59" ncloc="59" packages="2" files="10" classes="10"/>
     <package name="components">
-      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <metrics statements="41" coveredstatements="39" conditionals="8" coveredconditionals="5" methods="16" coveredmethods="15"/>
+      <file name="Body.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\components\Body.js">
+        <metrics statements="26" coveredstatements="24" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="9"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="34" count="7" type="stmt"/>
+        <line num="35" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="41" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="20" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="20" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="92" count="79" type="stmt"/>
+      </file>
       <file name="Contact.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\components\Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
@@ -19,12 +48,24 @@
         <line num="17" count="5" type="stmt"/>
         <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
+      <file name="RestaurantCard.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\components\RestaurantCard.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="80" type="stmt"/>
+        <line num="5" count="80" type="stmt"/>
+        <line num="6" count="80" type="stmt"/>
+      </file>
+      <file name="Shimmer.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\components\Shimmer.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
     </package>
     <package name="utils">
       <metrics statements="18" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
       <file name="UserContext.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\utils\UserContext.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
       </file>
       <file name="appStore.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\utils\appStore.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -40,20 +81,20 @@
       </file>
       <file name="constant.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\utils\constant.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
       </file>
       <file name="useOnlineStatus.js" path="C:\Users\Arjun\OneDrive\Desktop\React Practice\src\utils\useOnlineStatus.js">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
       </file>
     </package>
   </project>

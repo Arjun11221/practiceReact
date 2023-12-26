@@ -4,6 +4,7 @@
   "description": "This is react practice",
   "scripts": {
     "test": "jest",
+    "watch-test" : "jest --watchAll",
     "start": "parcel index.html --port 5000 ",
     "build": "parcel build index.html"
   },

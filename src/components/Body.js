@@ -44,6 +44,7 @@ const Body = () => {
       <div className=" flex p-4 m-4 items-center justify-center gap-4 text-black font-medium">
         <input
           type="text"
+          data-testid = "searchInput"
           className="border border-black rounded-md outline-none w-96 h-10 p-2 "
           value={search}
           onChange={(e) => {
@@ -65,6 +66,7 @@ const Body = () => {
       <div className="flex">
         <div className=" justify-start mx-4 ">
           <button
+          data-testid = "top"
             className="px-4 py-3 bg-zinc-800 rounded-lg text-white "
             onClick={() => {
               const filterList = listOfRes.filter(

@@ -4,7 +4,7 @@ const RestaurentCard = ({resData})=>{
     const {cloudinaryImageId,name,cuisines,avgRating,areaName} = resData.info;
     const {deliveryTime} = resData.info.sla;
     return (
-      <div className="m-4 p-4 w-64  bg-zinc-200 rounded-lg ">
+      <div data-testid = "cards" className="m-4 p-4 w-64  bg-zinc-200 rounded-lg ">
         <img className="rounded-t-md" src={IMG_URL+cloudinaryImageId}/>
        <div className="">
         <h3>{name}</h3>
