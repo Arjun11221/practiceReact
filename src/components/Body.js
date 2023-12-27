@@ -24,10 +24,10 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRes(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilterRes(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -38,13 +38,14 @@ const Body = () => {
 
   const { setName, logedIn } = useContext(UserContext);
 
-  if (listOfRes.length === 0) return <Shimmer />;
-  return (
+  return listOfRes.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className=" flex p-4 m-4 items-center justify-center gap-4 text-black font-medium">
         <input
           type="text"
-          data-testid = "searchInput"
+          data-testid="searchInput"
           className="border border-black rounded-md outline-none w-96 h-10 p-2 "
           value={search}
           onChange={(e) => {
@@ -66,7 +67,7 @@ const Body = () => {
       <div className="flex">
         <div className=" justify-start mx-4 ">
           <button
-          data-testid = "top"
+            data-testid="top"
             className="px-4 py-3 bg-zinc-800 rounded-lg text-white "
             onClick={() => {
               const filterList = listOfRes.filter(
@@ -83,7 +84,7 @@ const Body = () => {
           <input
             className="p-2 border border-black outline-none rounded-md"
             value={logedIn}
-            onChange={(e)=>setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
       </div>
