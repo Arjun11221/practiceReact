@@ -38,7 +38,7 @@ const Body = () => {
 
   const { setName, logedIn } = useContext(UserContext);
 
-  return listOfRes.length === 0 ? (
+  return listOfRes?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -89,7 +89,7 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap ">
-        {filterRes.map((restaurent) => (
+        {filterRes?.map((restaurent) => (
           <Link
             to={"/restaurant/" + restaurent.info.id}
             key={restaurent.info.id}
